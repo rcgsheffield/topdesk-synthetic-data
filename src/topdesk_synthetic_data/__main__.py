@@ -4,7 +4,8 @@ import argparse
 import logging
 
 import pandas
-from topdesk_synthetic_data.topdesk import Asset, Person, Incident
+
+from topdesk_synthetic_data.topdesk import Asset, Incident, Person
 
 DESCRIPTION = """
 TOPdesk synthetic data generator

@@ -87,9 +87,6 @@ class Incident:
             "Sophie White",
         ]
 
-        # Generate the data
-        data = []
-
         for i in range(num_records):
             # Generate call number (typical TOPdesk format: I YYMM NNN)
             call_number = f"I {random.randint(2401, 2412)} {str(i + 1).zfill(3)}"
@@ -130,7 +127,7 @@ class Incident:
                 ],
                 "Access Management": [
                     f"{subcategory} required",
-                    f"Cannot access system",
+                    "Cannot access system",
                     f"{subcategory} not working",
                 ],
                 "Email": [
@@ -141,12 +138,12 @@ class Incident:
                 "Printing": [
                     f"{subcategory} issue",
                     f"Printer {subcategory.lower()}",
-                    f"Print queue stuck",
+                    "Print queue stuck",
                 ],
                 "Telephony": [
                     f"{subcategory} problem",
                     f"Phone {subcategory.lower()}",
-                    f"Call quality issues",
+                    "Call quality issues",
                 ],
                 "Facilities": [
                     f"{subcategory} not working",

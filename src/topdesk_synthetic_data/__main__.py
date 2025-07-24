@@ -34,7 +34,9 @@ def main():
     logger.info("Generating TOPdesk dummy data...")
 
     # Generate incident data
-    incidents = pandas.DataFrame.from_records(Incident.generate(num_records=args.num_records))
+    incidents = pandas.DataFrame.from_records(
+        Incident.generate(num_records=args.num_records)
+    )
     logger.info("Generated %d incident records", len(incidents.index))
     incidents.to_csv("topdesk_incidents_dummy.csv", index=False)
     logger.info("Wrote topdesk_incidents_dummy.csv")
@@ -42,7 +44,9 @@ def main():
     logger.info("Wrote topdesk_incidents_dummy.xlsx")
 
     # Generate person data
-    people = pandas.DataFrame.from_records(Person.generate(num_records=args.num_records))
+    people = pandas.DataFrame.from_records(
+        Person.generate(num_records=args.num_records)
+    )
     logger.info("Generated %d person records", len(people.index))
     people.to_csv("topdesk_persons_dummy.csv", index=False)
     logger.info("Wrote topdesk_persons_dummy.csv")

@@ -13,22 +13,29 @@ class Incident:
     """Generator for research computing support incident dummy data"""
 
     # Research computing specific statuses
-    STATUSES = ["firstLine", "secondLine", "resolved", "closed", "onHold", "escalated"]
+    STATUSES = [
+        "In Progress",
+        "Logged",
+        "Resolved",
+        "Waiting for user",
+        "Monitored call",
+        "We think we have resolved",
+    ]
 
     # Priority levels for research support
-    PRIORITIES = ["P1", "P2", "P3", "P4", "P5"]
+    PRIORITIES = ["P1", "P2", "P3", "P4", "RFC"]
 
     # Impact levels relevant to research
     IMPACTS = [
-        "Individual Researcher",
-        "Research Group",
+        "Person",
+        "Team",
+        "Lecture",
         "Department",
-        "Multi-Department",
-        "University-wide",
+        "University",
     ]
 
     # Urgency levels
-    URGENCIES = ["Low", "Normal", "High", "Urgent", "Critical"]
+    URGENCIES = ["Low", "Medium", "High", "RFC", "Critical"]
 
     # Research computing categories
     CATEGORIES = [

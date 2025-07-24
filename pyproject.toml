@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools >= 80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topdesk-synthetic-data"
+version = "0.1.0"
+dependencies = [
+    "faker==37.*",
+    "pandas==2.*",
+    "openpyxl==3.*"
+]
+requires-python = ">= 3.9"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Joe Heffer", email = "j.heffer@sheffield.ac.uk" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+topdesk-synthetic-data = "topdesk_synthetic_data.__main__:main"

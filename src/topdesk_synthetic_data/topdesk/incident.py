@@ -265,6 +265,10 @@ class Incident:
     ]
 
     @classmethod
+    def reference_number(cls) -> str:
+        return f"SHEF {random.randint(1000, 9999)} {random.randint(1000, 9999)}"
+
+    @classmethod
     def generate(cls, num_records: int = 100) -> Generator[Dict[str, Any], None, None]:
         """
         Generate dummy data for research computing support incidents
@@ -277,8 +281,6 @@ class Incident:
         """
 
         for i in range(num_records):
-            # Generate call number (research IT format)
-            call_number = f"RIT {random.randint(2401, 2412)} {str(i + 1).zfill(3)}"
 
             # Random dates within last 6 months
             call_date = fake.date_time_between(start_date="-6m", end_date="now")
@@ -321,7 +323,7 @@ class Incident:
             yield {
                 # Core incident fields
                 "id": str(uuid.uuid4()),
-                "number": call_number,
+                "number": cls.reference_number(),
                 "externalNumber": (
                     f"GRANT-{random.randint(1000, 9999)}"
                     if random.random() > 0.8
